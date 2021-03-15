@@ -3,12 +3,23 @@ import React from "react";
 import { ReactMegaMenu } from "react-mega-menu";
 // Models
 import { SubItemsModel } from "../../../../models/sub-items.model";
+import SubMenuItemsList from "../submenu-items-list/submenu-items-list";
 
 interface SubMenuItemProps {
   items: Array<SubItemsModel>;
 }
 
 function SubMenuItem({ items }: SubMenuItemProps): JSX.Element {
+  let newItems: Array<SubItemsModel> = [];
+
+  items.forEach((sub) => {
+    newItems.push({
+      label: sub.label,
+      key: sub.key,
+      items: <SubMenuItemsList items={sub.items} />,
+    });
+  });
+
   return (
     <>
       <div className="submenu-item">
@@ -17,7 +28,7 @@ function SubMenuItem({ items }: SubMenuItemProps): JSX.Element {
           styleConfig={{
             ...styles,
           }}
-          data={items}
+          data={newItems}
         />
       </div>
     </>
