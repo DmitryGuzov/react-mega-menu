@@ -1,0 +1,12 @@
+.submenu-items-list {
+    width: 500px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 200px 200px;
+  }
+  
+  .submenu-items-list > .box {
+    padding: 5px;
+    border-radius: 12px;
+  }
