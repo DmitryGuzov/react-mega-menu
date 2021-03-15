@@ -3,6 +3,18 @@ import { ListItemModel } from "../../../../models/list-item.model";
 
 import "./submenu-items-list.css";
 
+interface ItemProps {
+  title: string;
+}
+
+const Item = ({ title }: ItemProps): JSX.Element => {
+  return (
+    <>
+      <li>{title}</li>
+    </>
+  );
+};
+
 interface SubMenuItemProps {
   items: Array<ListItemModel>;
 }
@@ -17,11 +29,7 @@ function SubMenuItemsList({ items }: SubMenuItemProps): JSX.Element {
               <h3>{el.label}</h3>
               <ul key={el.key}>
                 {el.items.map((el, index) => {
-                  return (
-                    <li key={index} style={{ cursor: "pointer" }}>
-                      {el}
-                    </li>
-                  );
+                  return <Item key={index} title={el} />;
                 })}
               </ul>
             </div>
