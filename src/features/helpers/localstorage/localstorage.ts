@@ -1,17 +1,13 @@
 function getData(type: "menu-list" | "submenu-list" | "submenu-items") {
   const jsonData: any = localStorage.getItem(type);
   const list: Array<any> = JSON.parse(jsonData);
-  if (list != undefined || null) {
+  if (list !== undefined || null) {
     return { status: "error", message: "List not found.", data: list };
   } else {
     return { status: "error", message: "List not found.", data: [] };
   }
 }
-interface ItemsModel {
-  label: string;
-  key: string | number;
-  items: Array<ItemsModel>;
-}
+
 interface MenuItemModel {
   label: string;
   key: string | number;

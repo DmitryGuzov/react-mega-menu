@@ -15,9 +15,6 @@ interface MenuProps {}
 function Menu({}: MenuProps): JSX.Element {
   const [list, setList] = useState<any>([]);
 
-  function handleSetData() {
-    createMenuItem("Category 2", "Category 2");
-  }
   function handleGetList() {
     let data = getData("menu-list").data;
     const newCategories2: Array<any> = [];
@@ -38,14 +35,17 @@ function Menu({}: MenuProps): JSX.Element {
   return (
     <>
       <div className="menu-wrapper">
-        <ReactMegaMenu
-          direction={"RIGHT"} // optional, defaults to "RIGHT", takes in "RIGHT" || "LEFT"
-          styleConfig={{
-            ...styles,
-          }}
-          data={list}
-        />
-        <button onClick={handleSetData}>Set</button>
+        {list.length > 0 ? (
+          <ReactMegaMenu
+            direction={"RIGHT"}
+            styleConfig={{
+              ...styles,
+            }}
+            data={list}
+          />
+        ) : (
+          <h3>Empty</h3>
+        )}
       </div>
     </>
   );
@@ -88,6 +88,7 @@ const styles = {
   },
   containerProps: {
     style: {
+      width: "100%",
       border: "2px solid blue",
       padding: "2px",
       display: "flex",

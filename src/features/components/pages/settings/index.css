@@ -1,0 +1,24 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 0;
+  margin: 5px 20px;
+  background-color: #ffffff;
+}
+
+.tabs > .left {
+  width: 300px;
+  height: auto;
+  border-right: 3px solid #c5c5c5;
+  height: calc(100vh - 50px);
+}
+.tabs > .left > h2 {
+  margin: 0 5px;
+  border-bottom: 4px solid #c5c5c5;
+  padding: 5px 0 5px 15px;
+}
+.tabs > .right {
+  width: calc(100% - 300px);
+  height: calc(100vh - 50px);
+  padding: 30px;
+}

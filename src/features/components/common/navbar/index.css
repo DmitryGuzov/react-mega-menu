@@ -1,0 +1,27 @@
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: #c5c5c5;
+}
+.navbar > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+}
+.navbar > ul > li {
+  margin-left: 20px;
+}
+.navbar > ul > li > a {
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 2px solid transparent;
+  transition: all 200ms ease-out;
+}
+.navbar > ul > li > a:hover {
+  border-bottom: 2px solid purple;
+}
+.navbar > ul > li > a.active {
+  border-bottom: 2px solid purple;
+}
