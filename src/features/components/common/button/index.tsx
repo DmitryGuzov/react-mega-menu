@@ -8,6 +8,7 @@ interface CustomButtonProps {
   onClick?: (data?: any) => void;
   bg?: string;
   color?: string;
+  disabled?: boolean;
 }
 
 const CustomButton = ({
@@ -16,10 +17,12 @@ const CustomButton = ({
   secondary,
   bg,
   color,
+  disabled,
   onClick,
 }: CustomButtonProps): JSX.Element => (
   <>
     <Button
+      disabled={disabled}
       content={content}
       primary={primary}
       secondary={secondary}

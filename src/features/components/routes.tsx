@@ -9,7 +9,7 @@ const Routes = () => {
     <>
       <Route exact path="/dashboard" component={Home} />
       <Route exact path="/settings" component={Settings} />
-      <Redirect from="/" to="/dashboard" />
+      {/* <Redirect from="/" to="/dashboard" /> */}
     </>
   );
 };

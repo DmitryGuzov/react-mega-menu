@@ -16,7 +16,7 @@ function Menu({}: MenuProps): JSX.Element {
   const [list, setList] = useState<any>([]);
 
   function handleGetList() {
-    let data = getData("menu-list").data;
+    let data = getData().data;
     const newCategories2: Array<any> = [];
     data.forEach((category) => {
       let object = {
