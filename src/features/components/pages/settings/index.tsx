@@ -1,50 +1,46 @@
 import React, { useEffect, useState } from "react";
-import { createMenuItem } from "../../../helpers/localstorage/localstorage";
-import Layout from "../../../layouts/layout/layout";
-import CustomButton from "../../common/button";
-import CustomInput from "../../common/input/CustomInput";
-import NavTree from "../../common/nav-tree";
-import CustomTree from "../../common/tree";
+// styles
 import "./index.css";
+// other
+import { getData } from "../../../helpers/localstorage/localstorage";
+import Layout from "../../../layouts/layout/layout";
+// Components
+import NavTree from "../../common/nav-tree";
+import StepOne from "../../step-one";
+import StepThree from "../../step-three";
+import StepTwo from "../../step-two";
 
+const items = [
+  {
+    title: "Settings",
+    items: ["Step 1", "Step 2", "Step 3"],
+    count: 1,
+  },
+  {
+    title: "Administration",
+    items: ["Licensing", "Administrators"],
+    count: 2,
+  },
+];
 function Settings() {
   const [activeTab, setActiveTab] = useState(0);
-  const [disabled, setDisabled] = useState(false);
-  const [menu, setMenu] = useState("");
   const [active, setActive] = useState(0);
-  const items = [
-    {
-      title: "Settings",
-      items: ["Step 1", "Step 2", "Step 3"],
-      count: 1,
-    },
-    {
-      title: "Administration",
-      items: ["Licensing", "Administrators"],
-      count: 2,
-    },
-  ];
-  const handleMenu = (evt: any) => {
-    setMenu(evt.target.value);
-  };
 
   const handleActiveTab = (idx1: number, idx2: number) => {
     setActiveTab(idx1);
     setActive(idx2);
   };
-  const handleCreateCategory = () => {
-    if (menu.trim() !== "") {
-      createMenuItem(menu, menu);
-    }
-  };
+
+  function handleGetList() {
+    let data = getData().data;
+    console.log(data);
+  }
+
   useEffect(() => {
-    if (menu.length > 3) {
-      setDisabled(true);
-    } else {
-      setDisabled(false);
-    }
+    handleGetList();
     return () => {};
-  }, [menu]);
+  }, []);
+
   return (
     <>
       <Layout>
@@ -59,28 +55,11 @@ function Settings() {
             />
           </div>
           <div className="right">
-            <CustomInput
-              type="text"
-              clearable
-              placeholder="Type menu item..."
-              onChange={handleMenu}
-              value={menu}
-            />
-            <CustomButton
-              secondary
-              content="Discard"
-              onClick={() => {
-                setMenu("");
-              }}
-              disabled={!disabled}
-            />
-            <CustomButton
-              primary
-              content="Save"
-              onClick={handleCreateCategory}
-              disabled={!disabled}
-            />
-            <CustomTree />
+            {activeTab === 0 && active === 0 ? <StepOne /> : null}
+            {activeTab === 0 && active === 1 ? <StepTwo /> : null}
+            {activeTab === 0 && active === 2 ? <StepThree /> : null}
+            {activeTab === 1 && active === 0 ? <h2>Licensing</h2> : null}
+            {activeTab === 1 && active === 1 ? <h2>Administrators</h2> : null}
           </div>
         </div>
       </Layout>

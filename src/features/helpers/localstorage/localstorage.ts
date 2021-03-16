@@ -2,7 +2,6 @@
 function getData() {
   const jsonData: any = localStorage.getItem("menu-list");
   const data: any = JSON.parse(jsonData);
-  console.log(data);
   if (data !== null) {
     return {
       status: "error",
@@ -19,6 +18,7 @@ interface MenuItemModel {
   key: string | number;
   items: Array<any>;
 }
+// Menu
 function createMenuItem(label: string, key: string | number) {
   let list: Array<any> = getData().data;
   let category = {
@@ -33,23 +33,67 @@ function createMenuItem(label: string, key: string | number) {
     message: "Menu Item created  success!",
   };
 }
-function createSubMenu(label: string, key: string | number) {
-  let list: Array<MenuItemModel> = getData().data;
-  let menuItem = {
-    label: label,
-    key: key,
-    items: [],
-  };
-  list.push(menuItem);
-  localStorage.setItem("menu-list", JSON.stringify(object));
+function deleteMenuItem(index: number) {
+  let list: Array<any> = getData().data;
+
+  list.splice(index, 1);
+
+  localStorage.setItem("menu-list", JSON.stringify(list));
   return {
     status: "success",
     message: "Menu Item created  success!",
   };
 }
-function createSubMenuItem() {}
+// Submenu
+function createSubMenu(index: number, label: string, key: string | number) {
+  let list: Array<any> = getData().data;
+  let menuItem = {
+    label: label,
+    key: key,
+    items: [],
+  };
+  list[index].subcategories.push(menuItem);
+  localStorage.setItem("menu-list", JSON.stringify(list));
+  return {
+    status: "success",
+    message: "Menu Item created  success!",
+  };
+}
+function deleteSubMenu(menuIndex: number, submenuIndex: number) {
+  let list: Array<any> = getData().data;
+  list[menuIndex].subcategories.splice(submenuIndex, 1);
+  localStorage.setItem("menu-list", JSON.stringify(list));
+  return {
+    status: "success",
+    message: "Menu Item created  success!",
+  };
+}
+// items
+function createSubMenuItem(
+  menuIndex: number,
+  submenuIndex: number,
+  data: Array<any>
+) {
+  let list: Array<any> = getData().data;
+  list[menuIndex].subcategories[submenuIndex].items = data;
+  localStorage.setItem("menu-list", JSON.stringify(list));
+  return {
+    status: "success",
+    message: "Menu Item created  success!",
+  };
+}
+function getSubcategoryItems(menuIndex: number, submenuIndex: number) {
+  let list: Array<any> = getData().data;
+  return list[menuIndex].subcategories[submenuIndex].items;
+}
 
-export { getData, createMenuItem, createSubMenu, createSubMenuItem };
+export {
+  getData,
+  createMenuItem,
+  createSubMenu,
+  createSubMenuItem,
+  getSubcategoryItems,
+};
 
 // MOCK DATA
 const object = [

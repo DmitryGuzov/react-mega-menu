@@ -5,14 +5,12 @@ import { AnyARecord } from "node:dns";
 interface CustomInputProps {
   type: string;
   placeholder?: string;
-  clearable?: boolean;
   onChange?: (event: any) => void;
   value?: string;
 }
 
 const CustomInput = ({
   type,
-  clearable,
   placeholder,
   value,
   onChange,
@@ -21,7 +19,6 @@ const CustomInput = ({
   <Input
     fluid
     type={type}
-    clearable={clearable}
     placeholder={placeholder}
     onChange={onChange}
     value={value}
