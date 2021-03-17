@@ -26,7 +26,6 @@ const StepOne = ({}: StepOneProps): JSX.Element => {
   };
   const handleCreateCategory = () => {
     if (menu.trim() !== "") {
-      console.log(menu);
       createMenuItem(menu, menu);
       handleGetList();
     }
@@ -34,7 +33,6 @@ const StepOne = ({}: StepOneProps): JSX.Element => {
   const handleRemove = (idx: number) => {
     const newItems = items;
     newItems.splice(idx, 1);
-    console.log(idx);
     setItems([...newItems]);
   };
   const handleChangeLabel = (idx: number) => (event: any) => {

@@ -43,7 +43,6 @@ const StepTwo = ({}: any): JSX.Element => {
   const handleRemove = (idx: number) => {
     const newItems = subcategories;
     newItems.splice(idx, 1);
-    console.log(idx);
     setSubcategories([...newItems]);
   };
   const handleChangeLabel = (idx: number) => (event: any) => {
@@ -57,7 +56,6 @@ const StepTwo = ({}: any): JSX.Element => {
     setCategories(newItems);
   };
   useEffect(() => {
-    console.log(subcategories);
   }, [subcategories]);
   useEffect(() => {
     handleGetList();

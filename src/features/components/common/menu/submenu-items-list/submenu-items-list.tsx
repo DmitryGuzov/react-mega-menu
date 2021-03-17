@@ -10,7 +10,7 @@ interface ItemProps {
 const Item = ({ title }: ItemProps): JSX.Element => {
   return (
     <>
-      <li>{title}</li>
+      <p><a href="">{title}</a></p>
     </>
   );
 };
@@ -27,11 +27,11 @@ function SubMenuItemsList({ items }: SubMenuItemProps): JSX.Element {
           return (
             <div className="box" key={index}>
               <h3>{el.label}</h3>
-              <ul key={el.key}>
+              {/* <ul key={el.key}> */}
                 {el.items.map((el, index) => {
                   return <Item key={index} title={el} />;
                 })}
-              </ul>
+              {/* </ul> */}
             </div>
           );
         })}

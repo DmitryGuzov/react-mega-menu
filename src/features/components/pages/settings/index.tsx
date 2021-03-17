@@ -31,16 +31,6 @@ function Settings() {
     setActive(idx2);
   };
 
-  function handleGetList() {
-    let data = getData().data;
-    console.log(data);
-  }
-
-  useEffect(() => {
-    handleGetList();
-    return () => {};
-  }, []);
-
   return (
     <>
       <Layout>

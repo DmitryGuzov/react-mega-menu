@@ -53,4 +53,4 @@ const NavTree = ({
   );
 };
 
-export default NavTree;
+export default React.memo(NavTree);

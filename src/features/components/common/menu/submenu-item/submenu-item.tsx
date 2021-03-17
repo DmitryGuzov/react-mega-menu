@@ -37,42 +37,51 @@ function SubMenuItem({ items }: SubMenuItemProps): JSX.Element {
 const styles = {
   menuProps: {
     style: {
-      border: "2px solid red",
-      height: "20em",
-      width: "30%",
-      padding: "2px",
+      // border: "2px solid red",
+      height: "100%",
+      width: "250px",
+      // padding: "2px",
       margin: "0",
       order: "1",
     },
   },
   contentProps: {
     style: {
-      width: "70%",
-      border: "2px solid yellow",
-      padding: "2px",
+      border: "2px solid purple",
+      borderWidth: '3px 0 0 0',
+      width: "450px",
+      height: '500px',
+      // padding: "2px",
+      background: '#ffffff',
       order: "2",
     },
   },
   menuItemProps: {
     style: {
-      border: "2px solid green",
-      padding: "2px",
-      height: "2em",
+      height: "40px",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      paddingLeft: '20px',
+      marginLeft: '0'
     },
   },
   menuItemSelectedProps: {
     style: {
-      border: "2px solid purple",
-      padding: "2px",
-      height: "2em",
-      backgroundColor: "grey",
+      height: "40px",
+      backgroundColor: "#ffffff",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      paddingLeft: '20px',
+      marginLeft: '0'
     },
   },
   containerProps: {
     style: {
-      border: "2px solid blue",
+      // border: "2px solid blue",
       width: "100%",
-      padding: "2px",
+      height: '500px',
       display: "flex",
       position: "relative",
     },

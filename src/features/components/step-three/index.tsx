@@ -84,13 +84,11 @@ const StepThree = ({}: any): JSX.Element => {
     let object = { label: "", key: "", items: [""] };
     const newItems = items;
     newItems.splice(idx + 1, 0, object);
-    console.log(idx);
     setItems([...newItems]);
   };
   const handleRemove = (idx: number) => {
     const newItems = items;
     newItems.splice(idx, 1);
-    console.log(idx);
     setItems([...newItems]);
   };
   const handleSubAdd = (idx1: number, idx2: number) => {

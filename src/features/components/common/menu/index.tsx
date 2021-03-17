@@ -54,19 +54,24 @@ function Menu({}: MenuProps): JSX.Element {
 const styles = {
   menuProps: {
     style: {
-      border: "2px solid red",
-      height: "auto",
+      // border: "2px solid red",
+      background: '#ffffff',
+      height: "50px",
       width: "100%",
       padding: "2px",
       margin: "0",
       order: "1",
       display: "flex",
+      alignItems: 'center',
     },
   },
   contentProps: {
     style: {
-      width: "100%",
-      border: "2px solid yellow",
+      // border: "2px solid yellow",
+      background: 'gray',
+      width: "700px",
+      height: '500px',
+      marginLeft: '50px',
       padding: "2px",
       order: "2",
     },
@@ -88,8 +93,8 @@ const styles = {
   },
   containerProps: {
     style: {
+      // border: "2px solid blue",
       width: "100%",
-      border: "2px solid blue",
       padding: "2px",
       display: "flex",
       flexDirection: "column",
