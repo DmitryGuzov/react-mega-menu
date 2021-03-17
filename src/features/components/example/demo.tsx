@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 
 import ReactMegaMenu from "react-mega-menu";
 import { MOCK_CATEGORIES } from "./mock";
