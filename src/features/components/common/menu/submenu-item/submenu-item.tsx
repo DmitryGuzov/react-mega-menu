@@ -35,55 +35,52 @@ function SubMenuItem({ items }: SubMenuItemProps): JSX.Element {
   );
 }
 const styles = {
-  menuProps: {
+  containerProps: {
     style: {
-      // border: "2px solid red",
-      height: "100%",
-      width: "250px",
-      // padding: "2px",
-      margin: "0",
-      order: "1",
+      width: "100%",
+      height: "500px",
+      display: "flex",
+      position: "relative",
     },
   },
-  contentProps: {
+  menuProps: {
     style: {
-      border: "2px solid purple",
-      borderWidth: '3px 0 0 0',
-      width: "450px",
-      height: '500px',
-      // padding: "2px",
-      background: '#ffffff',
-      order: "2",
+      height: "100%",
+      width: "250px",
+      margin: "0px",
+      order: "1",
     },
   },
   menuItemProps: {
     style: {
       height: "40px",
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      paddingLeft: '20px',
-      marginLeft: '0'
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      paddingLeft: "20px",
+      marginLeft: "0",
     },
   },
   menuItemSelectedProps: {
     style: {
       height: "40px",
       backgroundColor: "#ffffff",
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      paddingLeft: '20px',
-      marginLeft: '0'
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      paddingLeft: "20px",
+      marginLeft: "0",
     },
   },
-  containerProps: {
+  contentProps: {
     style: {
-      // border: "2px solid blue",
-      width: "100%",
-      height: '500px',
-      display: "flex",
-      position: "relative",
+      border: "2px solid purple",
+      borderWidth: "3px 0 0 0",
+      width: "450px",
+      height: "500px",
+      // padding: "2px",
+      background: "#ffffff",
+      order: "2",
     },
   },
 };

@@ -52,28 +52,27 @@ function Menu({}: MenuProps): JSX.Element {
 }
 
 const styles = {
+  containerProps: {
+    style: {
+      // border: "2px solid blue",
+      width: "100%",
+      padding: "2px",
+      display: "flex",
+      flexDirection: "column",
+      height: "auto",
+      position: "relative",
+    },
+  },
   menuProps: {
     style: {
-      // border: "2px solid red",
-      background: '#ffffff',
+      background: "#ffffff",
       height: "50px",
       width: "100%",
       padding: "2px",
       margin: "0",
       order: "1",
       display: "flex",
-      alignItems: 'center',
-    },
-  },
-  contentProps: {
-    style: {
-      // border: "2px solid yellow",
-      background: 'gray',
-      width: "700px",
-      height: '500px',
-      marginLeft: '50px',
-      padding: "2px",
-      order: "2",
+      alignItems: "center",
     },
   },
   menuItemProps: {
@@ -91,15 +90,14 @@ const styles = {
       cursor: "pointer",
     },
   },
-  containerProps: {
+  contentProps: {
     style: {
-      // border: "2px solid blue",
-      width: "100%",
+      background: "gray",
+      width: "700px",
+      height: "500px",
+      marginLeft: "50px",
       padding: "2px",
-      display: "flex",
-      flexDirection: "column",
-      height: "auto",
-      position: "relative",
+      order: "2",
     },
   },
 };

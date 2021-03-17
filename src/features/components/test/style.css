@@ -1,0 +1,83 @@
+/* container */
+.custom_menu > div {
+  border: 2px solid blue;
+  padding: 2px;
+}
+.custom_menu > div:hover {
+  width: 500px;
+  animation-iteration-count: 1;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+  animation-name: width;
+}
+
+/* content */
+.custom_menu > div > ul ~ div {
+  background-color: royalblue;
+  width: 10em;
+  height: 10em;
+  border: 2px solid yellow;
+  padding: 2px;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+  color: aqua;
+  animation-iteration-count: 1;
+  animation-duration: 200ms;
+  animation-name: slide;
+}
+@keyframes width {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 500px;
+  }
+}
+@keyframes slide {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+    z-index: -1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 0;
+  }
+}
+/* .custom_menu > div > ul ~ div:hover {
+  background-color: red;
+  transition: all 200ms ease-out;
+  color: aqua;
+} */
+/* menu */
+.custom_menu > div > ul {
+  background-color: yellowgreen;
+  border: 2px solid red;
+  height: 20em;
+  width: 10em;
+  padding: 2px;
+  margin: 0;
+}
+/* menu item */
+.custom_menu > div > ul > li {
+  border: 2px solid green;
+  padding: 2px;
+  height: 2em;
+  border-bottom: 1px solid red;
+  color: hotpink;
+  transition: all 200ms ease-out;
+}
+/* selected menu item */
+.custom_menu > div > ul > li:hover {
+  background-color: royalblue !important;
+  border: 2px solid purple;
+  padding: 2px;
+  height: 2em;
+}
+.custom_menu > div > ul > li:active {
+  background-color: royalblue !important;
+  border: 2px solid purple;
+  padding: 2px;
+  height: 2em;
+}
